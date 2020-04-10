@@ -1,28 +1,23 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <!-- <div class="first"> -->
+  <!-- 这里不能再加div嵌套,  加了, 下面样式就得加一个 高度,不然,后面的继承不了它的高度, 影响登录页面的高度 -->
+  <!-- 路由出口 -->
+  <!-- 登录出口,因为是独立于任何一个页面,所以直写在app.vue中 -->
+  <!-- <el-button type="primary">测试用,说明整合Ui成功了</el-button>
+    我是app -->
+  <router-view></router-view>
+  <!-- </div> -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "app"
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+/* 当嵌套多时, 又不删除上面的div 只能通过 个类名来为它加高度来达到后面的所需要的继承 bug1 */
+/* .first{
+  height: 100%;
+} */
 </style>
